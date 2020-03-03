@@ -19,7 +19,7 @@ class TypeBooksController extends Controller
     }
     public function destroy($id){
         //TypeBooks::find($id)->delete();
-        TypeBooks::destroy($id);
+        TypeBooks::destroy($id);//
         return back();
     }
 }
