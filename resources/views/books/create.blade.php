@@ -7,6 +7,7 @@
                 เพิ่มข้อมูลรายการหนังสือ
             </div>
             <div class = "card-body">
+            
                 {!! Form::open(array('url'=>'books','files'=>true)) !!}
                 <div class = "Form-group">
                     <?=Form::label('title','ชื่อหนังสือ'); ?>
@@ -28,6 +29,16 @@
             <div class="form-group">
                 <?=form::submit('บันทึก',['class'=>'btn btn-primary']);?>
             </div>
+            @if (count($errors) >0)
+            <div class ="alert alert-warning">
+            <ul>
+               @foreach ($errors->all() as $error)
+               <li>{{$error}}</li>
+               @endforeach
+               </ul>
+               </div>
+               @endif
+            
             {!!Form::close()!!}
         </div>
     </div>
