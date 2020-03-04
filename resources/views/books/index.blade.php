@@ -26,7 +26,7 @@
                             <td>{{$book->price}} </td>
                             <td>{{$book->typebooks->name}}</td>
                             <td> 
-                            <td><img src="{{asset('images/'.$book->image)}}" style="width:50px"></td>
+                            <a href="{{ asset('images/'.$book->image) }}"><img src="{{asset('images/resize/'.$book->image)}}"></a></td>
                         </tr>
 
 

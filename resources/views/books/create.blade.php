@@ -26,18 +26,19 @@
                 {!! Form::label('image','รูปภาพ');!!}
                 <?=Form::file('image',null,['class'=>'form-control'])?>
             </div>
+            @if (count($errors) >0)
+            <div class="alert alert-warning">
+            <ul>
+            @foreach($errors->all() as $error)
+                  <li>{{$error}}</li>
+                  @endforeach
+                  </ul>
+                  </div>
+                  @endif
             <div class="form-group">
                 <?=form::submit('บันทึก',['class'=>'btn btn-primary']);?>
             </div>
-            @if (count($errors) >0)
-            <div class ="alert alert-warning">
-            <ul>
-               @foreach ($errors->all() as $error)
-               <li>{{$error}}</li>
-               @endforeach
-               </ul>
-               </div>
-               @endif
+            
             
             {!!Form::close()!!}
         </div>
