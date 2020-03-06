@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md col-md-offset-2">
             <div class = "care-header h3 ">
-                เพิ่มข้อมูลรายการหนังสือ
+                แก้ไขข้อมูลหนังสือ {{$book->title}}
             </div>
             @if (count($errors) >0)
             <div class="alert alert-warning">
@@ -31,6 +31,8 @@
                 App\typebooks::all()->pluck('name','id'),null,['class'=>'form-control','placeholder'=>'เลือกประเภทหนังสือ']); ?>
 
             </div>
+           <div> <a href="{{ asset('images/'.$book->image) }}"><img src=
+            "{{asset('images/resize/'.$book->image)}}"style="width:100px"></a></div>
             <div class="form-group">
                 {!! Form::label('image','รูปภาพ');!!}
                 <?=Form::file('image',null,['class'=>'form-control'])?>
