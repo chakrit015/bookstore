@@ -10,7 +10,7 @@ use File;
 
 class BooksController extends Controller
 {
-    public function _construct(){
+    public function __construct(){
         $this->middleware('auth', ['except'=>['index']]);
         //$this->middleware('auth', ['except'=>['index','create','store']]);
     }
